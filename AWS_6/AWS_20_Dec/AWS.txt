@@ -1,0 +1,11 @@
+
+
+Date: 20-12-2023
+DevOps with AWS
+Mr. Raghu (AshokIT)
+--------------------
+CloudWatch:-
+-> Metrics (Ex: CPU usage - 12 % , RAM - 2%, EBS - 5GiB)
+-> Logs (Success, Warning, Errors messages)
+-> Alarm ( If X > 70% used then do Y)
+-> Health of Resources (Is service up or down?)

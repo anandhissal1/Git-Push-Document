@@ -1,0 +1,13 @@
+
+
+Date: 18-12-2023
+DevOps with AWS
+Mr. Raghu (AshokIT)
+--------------------
+-> To Deploy a Web Application?
+1. Hardware and Networking (CPU, RAM, Storage)
+2. OS and Configurations (AMI, ..etc)
+3. Runtimes(JDK, Maven)
+4. WebServer (Tomcat)
+5. Code in deployable format (build)
+6. Security Configurations (SSH/HTTP/..)

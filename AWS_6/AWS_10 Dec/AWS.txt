@@ -1,0 +1,39 @@
+
+Date : 10-12-2023
+DevOps with AWS
+Mr. Raghu (AshokIT)
+-------------------
+Database:
+ To store application data / end-customers data, in a well organized manner.
+
+1. SQL Based / Relational
+	- Oracle, MySQL, Postgress ..etc
+2. NoSQL Based 
+      - MongoDB, Redis..etc
+
+---EC2 Instance is exist---
+
+URL: 
+Port: 3306
+Username: admin
+Password: Raghu2023
+
+=====================Session-2=============================
+EBS : Block store (SSD/HDD) -- OS, Applications, User data ..etc
+RDS : Database Storage (Schema) -- Tables, Rows, Colums ..etc
+
+S3 : Simple Storage Service -- Object Level Storage
+
+Q) Object means in AWS?
+A) Images, Audio, Video, ZIP Files, Text files, Large Documents, PDFs,..etc
+
+Similer to Google Drive.
+
+*) The Max Size Limit of an Object(not bucket) is 5TB.
+
+
+s3://ashokit-bucket/DevOps_08122023.txt
+
+Document - 30 lines - Uploaded (v1)
+Document - 40 lines - Uploaded (v2) 
+Document - 45 lines - Uploaded (v3) -- latest

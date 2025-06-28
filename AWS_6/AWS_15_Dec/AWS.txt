@@ -1,0 +1,20 @@
+
+
+Date: 15-12-2023
+DevOps with AWS
+Mr. Raghu (AshokIT)
+-------------------
+Manually Managed FileSystem:
+-> Buy Physical Server
+-> Networking process
+-> Configure
+-> Install OS/VM/Apps 
+-> FileSystem setup
+-> Firewall Configs..etc
+
+1. Create EC2 Instance
+2. Allow NFS in Security Group
+3. Install AWS-EFS-UTILS
+sudo yum install -y amazon-efs-utils
+4. Connect with EFS
+sudo mount -t efs -o tls fs-0f268c254aab3358c:/ efs

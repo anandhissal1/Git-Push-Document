@@ -1,0 +1,20 @@
+
+
+Date: 19-12-2023
+DevOps with AWS
+Mr. Raghu (AshokIT)
+-------------------
+Functional Programming:
+ Executing a task based on parameters.
+
+-> Lambda is a Serverless computing Service
+-> Server required to run function is managed by AWS.
+-> Lambda is used to run event based functions.
+OTP Generation, Email Confirmations, Backups, Schedules for Batches..etc
+
+-> If Application is kept in EC2 Instance and status is Running
+   then bill generated for running hours
+
+-> Lambda generates bill based on no.request counts and execution time
+	of your code.
+-> Lambda will not store request data once response is committed.

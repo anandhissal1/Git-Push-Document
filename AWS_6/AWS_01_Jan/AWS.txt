@@ -1,0 +1,22 @@
+
+
+Date: 04-01-2024
+DevOps with AWS
+Mr. Raghu (AshokIT)
+--------------------
+Variable : memory block, name given to it, holds value.
+key = val format.
+
+Terraform supports 3 types of variables.
+1. Input Variables
+2. Local Variables
+3. Output Variables
+
+Project files:
+1. main.tf : Actual configuration
+2. variables.tf : declare variables, datatypes, default values 
+3. terraform.tfvars : Variable with values
+
+https://github.com/javabyraghu/terraform-aws-project/tree/main
+
+https://developer.hashicorp.com/terraform/cli/config/environment-variables

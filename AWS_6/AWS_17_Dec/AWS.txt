@@ -1,0 +1,42 @@
+
+
+Date: 17-12-2023
+DevOps with AWS
+Mr. Raghu (AshokIT)
+---------------------
+-> VPC: IP Address (From Range to Range)
+Classless Inter-Domain Routing (CIDR) is an IP address allocation method.
+
+10.12.0.0/30 =>  CIDR IP Range 10.12.0.0 - 10.12.0.3
+  IP/Range   =>  2 pow(32-range) => 2 pow(32-30) => 2pow(2) => 4
+
+192.168.10.12/32 => 2 pow(32-32) => 2 pow(0) => 1
+
+-> By default one VPC is provided for one region.
+-> Make sure that, Two VPCs (in same region) 
+	should not have same CIDR blocks
+-> If a subnet is having entry like (0.0.0.0/0) in its route table
+  (ie connected with IGW) then it is called as public subnet.
+
+===============================
+Session-2:
+Database: 
+- SQL based (MySQL, Oracle ..etc)
+	INSERT INTO EMPTAB
+	SELECT EID FROM EMPTAB
+- NoSQL based (Dynamo DB)
+	API calls/methods
+	 save(obj)
+	 fetch(id)
+
+-> DynamoDB
+  1. NoSQL Database
+  2. Fully Managed By AWS Team
+  3. Start using it (by creating tables)
+  4. Connect using APIs
+     (a) Java -- Maven Dependency
+     (b) API Info
+
+=========================================
+Amazon E-Com
+Search ----MQ----Cart----MQ---Payment--MQ---Order

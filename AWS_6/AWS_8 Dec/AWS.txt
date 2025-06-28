@@ -1,0 +1,30 @@
+
+
+Date: 08-12-2023
+DevOps with AWS
+Mr. Raghu (AshokIT)
+---------------------
+EC2 User data : 
+-> To execute any script, only once, while creating EC2 Instance.
+-> Executed only once.
+-> If restart EC2, it is not applicable.
+-> BASH Script/Linux Commands ..etc
+
+
+#! /bin/bash
+sudo su
+yum install httpd -y
+cd /var/www/html
+echo "<html><h1>Welcome to AWS CLOUD :: Server 1</h1></html>" > index.html
+service httpd start
+
+
+LoadBalancer: Load(Request) is distributed to multiple EC2 Instances of
+	a given set (TargetGroup)
+
+--Must Terminate in Order---
+1. LoadBalancer
+2. Target Group
+3. EC2 Instances
+
+http://my-webservers-lb-76886364.ap-south-1.elb.amazonaws.com/

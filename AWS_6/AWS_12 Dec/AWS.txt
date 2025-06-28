@@ -1,0 +1,22 @@
+
+
+Date: 12-12-2023
+DevOps with AWS
+Mr. Raghu (AshokIT)
+----------------------
+S3: Storing object
+-> How Long you want to keep?
+-> How frequently you will access?
+
+IAM - User Operations
+1. DevOps  : Install Jenkins in EC2
+	(Login + Access Resources)
+2. Developer : Start Pipeline and check logs in S3
+	(Login + Viwe Resources)
+3. Admin   : EC2 New Instance
+	(Login + Create new Resources)
+
+IAM:
+URL: https://shettyraghu.signin.aws.amazon.com/console
+Un: sam
+pwd: r=Oiy7'-

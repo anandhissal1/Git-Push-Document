@@ -1,0 +1,41 @@
+
+
+Date: 09-12-2023
+DevOps with AWS
+Mr. Raghu (AshokIT)
+------------------
+	Session-1
+Scaling: able to modify resources count
+-> Horizontal Scaling : Create multiple EC2 Instances.
+-> Vertical Scaling: Increase System capacity (CPU, RAM, Storage).
+
+LoadBalacing:
+-> Used for Horizontal Scaling.
+-> Distribute Load(Request) equal to all machines.
+
+AutoScaling:
+-> Create/Reduce Multiple EC2 Instances based on metrics(CPU usage)
+-> Launch Templates : Contains details to create EC2 Instance
+(selected details : instance type, AMI, VPC, KP, EBS, UserData ..etc)
+
+================================================================
+	Session-2
+=> EBS: Elastic Block Store
+=> Comes under storage (SSD/HDD)
+=> Block Level Storage
+=> Primary Volume (root volume)
+   Secondary Volume (additional volume)
+=> Attached, Detacted to an EC2 Instance.
+=> Finally need to be mounted/un-mounted to a path
+=> EBS Volume (Sec one) min size : 1 GiB, max size: 16384 GiB
+=> Both EC2 and Root EBS volumes are created in same zone.
+ex: Ec2 -> ap-south-1a, ebs vol : ap-south-1a
+=> EBS volumes are Availability Zone specific.
+
+Q) What is Delete on termination of EBS Volume incase of EC2 Instance?
+A) If we keep Delete on termination - YES, it means if we terminate EC2
+   Instance then Its root volume also deleted.
+   If we select NO(Delete on termination), EBS volume still exist
+   even After EC2 Instance termination.
+======================================================================
+*) Snapshots are created in S3 (Simple Storage Service)

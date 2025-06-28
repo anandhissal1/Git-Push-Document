@@ -1,0 +1,24 @@
+
+
+Date: 21-12-2023
+DevOps with AWS
+Mr. Raghu (AshokIT)
+-------------------
+IaC : Infrastructure as Code
+-> This is an automation process
+-> Define some script onetime (template/format)
+   and execute multiple times.
+-> Infrastructure means all resources used to build, run and deploy
+	applications.
+
+1. Manual Creation
+Task: Create EC2 Instance
+-> Login AWS Console
+-> Goto EC2 Service
+-> Choose Launch Instance
+-> choose details (AMI, InstanceType, EBS, VPC ..etc)
+-> Create it.
+
+2. Create using Code : IaC / IAC
+- AWS CloudFormation (JSON/YAML)
+- Terraform (Works for any cloud automation) [HCL]

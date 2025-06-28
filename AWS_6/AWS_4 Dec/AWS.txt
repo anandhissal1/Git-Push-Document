@@ -1,0 +1,26 @@
+
+Date : 04-12-2023
+DevOps with AWS
+Mr. Raghu (AshokIT)
+--------------------
+AWS EC2 : Elastic Compute Cloud
+
+(Amazon Machine Image)
+AMI: It indicates OS and some pre-configured applications
+	like Java, Python, .Net Runtime etc.
+
+
+Instance type: It indicates CPU and RAM details for our EC2.
+
+VPC: Virtual Private Cloud
+-> Netwroking (Private Network Configuration)
+-> Subnetwork (Subnet in a AZ)
+-> Security Configuration (SG)
+
+Volumes: EBS Elastic Block Stores
+-> To install OS, store your data, install apps
+   we need storage.
+
+-> Every EC2 Instance contains unique id (instance-id)
+   and a state (Running, Stopped..etc)
+-> EC2 Instance gets one Private IP and Public IP (if configured).

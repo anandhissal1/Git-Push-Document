@@ -1,0 +1,25 @@
+
+
+Date: 07-12-2023
+DevOps with AWS
+Mr. Raghu (AshokIT)
+-------------------
+-> In every region one default SG is given.
+   (Which can not be deleted)
+-> One SG can be added to multiple EC2 Instances.
+   Even, one EC2 Instance can have multiple SGs.
+
+Public DNS: 
+ec2-3-110-30-2.ap-south-1.compute.amazonaws.com
+
+Username:
+Administrator
+
+Password:
+)@(C71=5XU6WL266g&ucHNwK!tzRY0Fd
+
+
+Elastic IP: 
+   -> Fixed public IP, allocated by AWS.
+   -> We can link (associate) with EC2 Machines.
+   -> Unused Elastic IPs are billed.
