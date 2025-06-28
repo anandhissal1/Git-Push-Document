@@ -1,0 +1,26 @@
+
+
+Date : 14-11-2023
+DevOps with AWS
+Mr. Raghu (AshokIT)
+---------------------
+containerization : Packing Application into Image(Code + Dep + Runtime)
+	that can become independent of OS to run application.
+	If we run image, then container is created.
+
+Orchestration: Manage Multiple containers.
+  Create, Update, Scale(Up/Down), remove, moniter ..etc
+
+*) Above works can be done by DevOps engineer (manually) or we can inform
+  to Docker Swarm  (or any Orchestration tool for automation)
+
+*) downtime : Stopping Service for a period of time.
+*) self heal: makesure no.of instances running, if any instance/container
+	is down/removed, then new container is created (in any one Machine)
+
+*) Convert any one machine as master
+sudo docker swarm init --advertise-addr 172.31.38.233
+
+*) services : Creating containers with given replicas(count)
+
+sudo docker service create --name my-web-app -p 8080:8080 javabyraghu/maven-web-app
