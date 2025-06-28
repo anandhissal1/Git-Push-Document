@@ -1,0 +1,65 @@
+
+
+Date : 22-11-2023
+DevOps with AWS
+Mr. Raghu (AshokIT)
+-------------------
+k8s software installation types:
+1. Minikube (dev/test)
+	- Single node cluster
+
+2. kubeadm  (on-primse server)
+	- multi node cluster
+	- 1 master node, n-worker nodes
+	- create all nodes with t2.medium instance type
+	- Execute comman commands at all nodes
+	- Execute master commands at master node
+	- Generate Join command at Master node
+	- Copy and paste join command at worker node
+
+Ref:
+Page#5 : KUBEADM INSTALLATION IN AWS 
+
+
+3. Cloud based Kubernetes 
+	(AWS EKS, AzureKS, GKS ..etc)
+
+Note:
+1. : Creates Deployment and calls scheduler to
+	create and configure ReplicaSet
+2. replicaset-controller: Creates ReplicaSet and schedule to create Pods	
+	by selecting worker nodes.
+3. kubelet in worker node listens to master and creates pods by pulling
+	images and by creating containers.
+
+4. If any pod is removed or stopped working bcoz of any issue,
+	then scheduler makes sure DESIRED matching to CURRENT,
+	if not create new pods.
+
+
+
+1. Scaled up replica set my-test-67f88c55f6 to 2
+-> On First create deployment command 2 pods are created for nginx:1.23
+cmd:
+ kubectl create deploy my-test --image=nginx:1.23 --replicas=2
+
+2. Scaled up replica set my-test-6db589b947 to 1
+ Edited deployment and modified image version to 1.24
+
+cmd:
+  kubectl edit deploy my-test
+  Press I to insert mode
+  update image version then :wq
+
+-> Two new version pods need to be created.
+   1- new pod is created
+
+
+3. Scaled down replica set my-test-67f88c55f6 to 1 from 2
+Deleting 1-Old Pod (Version 1.23) 
+
+4. Scaled up replica set my-test-6db589b947 to 2 from 1
+ 2nd new pod is created(version 1.24)
+
+4. Scaled down replica set my-test-67f88c55f6 to 0 from 1
+ 2nd old pod is deleted.
