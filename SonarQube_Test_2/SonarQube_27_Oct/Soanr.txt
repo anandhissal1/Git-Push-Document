@@ -1,0 +1,30 @@
+
+
+Date: 27-10-2023
+DevOps with AWS
+Mr. Raghu (AshokIT)
+---------------------------
+SonarQube : Set of rules (Validate the code / Static Code Analyzer)
+
+*) Ex: SonarQube Supportx 600+ Rules for Java.
+*) We want to select few rules (which are required) and apply to
+   our projects.
+ex: 35 rules --> HelathCare App, 120 Rules --> EMS Project ..etc
+
+*) Quality Profile: Set of Rules, a name is provided. 
+	Applied for Project/Programming Language
+
+=> built-in profile is given : sonar way [pre-defined by sonarqube]
+
+=====================================================================
+Project :
+ 300 Bugs
+ 2000 Code Smells
+ 10 % test coverage
+
+Allow Project to next level only if 
+condition-1 Bugs < 10
+condition-2 Code Smells < 25
+condition-3 test Coverge > 75%
+..etc
+===================================================================

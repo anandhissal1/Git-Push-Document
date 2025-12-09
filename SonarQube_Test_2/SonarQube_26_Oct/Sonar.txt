@@ -1,0 +1,39 @@
+
+
+Date : 26-10-2023
+DevOps with AWS
+Mr. Raghu (AshokIT)
+--------------------
+SonarQube is an open-source platform developed by SonarSource 
+for continuous inspection of code quality
+
+Q) how do they measure code quality?
+A) By setting some rules
+
+=> SonarQube is developed using Java. 
+   So, Java S/w is required to install and run
+
+Q) What is mean by "systectl enable <service-name>" ?
+A) When we stop OS(Linux Machine) service will be stopped.
+   If we start OS, service will not be started by default.
+   We need to start again "systemctl start".
+
+   systemctl enable => Makes App startup on OS loading(starting of OS).
+
+-----------------------------------------------------------------------
+=> Set of rules given by SonarQube.
+
+*) Rule    : A condition that validates code.
+*) Profile : selected rules, which are going to be applied for a project.
+
+Sonarqube
+URL: http://43.204.38.231:9000/
+USER: raju
+PWD:  raju
+
+  <properties>
+	<sonar.host.url>http://43.204.38.231:9000/</sonar.host.url>
+	<sonar.login>raju</sonar.login>
+	<sonar.password>raju</sonar.password>
+  </properties>
+

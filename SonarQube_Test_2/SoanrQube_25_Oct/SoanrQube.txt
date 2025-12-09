@@ -1,0 +1,30 @@
+
+Date : 25-10-2023
+DevOps with AWS
+Mr. Raghu (AshokIT)
+----------------------------
+Code Quality Tool : SonarQube 
+-> Configured by DevOps Team.
+-> Used by Development Team.
+
+*) How code is validated?
+Manual:
+  => In general, code is validated by Senior.Developers / TL.
+
+Automat: (Tool)
+  => Use a Tool which validates all configured rules for given app(code)
+
+
+## DSA --> Bette way of writing code
+code smells: You can make it still better
+
+---------------------------------------
+Developers will write UnitTest cases 
+Test Coverage : How many lines of Code is tested
+
+https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.9.10.61524.zip
+
+sudo yum install java ?
+
+
+sudo yum install nexus?
