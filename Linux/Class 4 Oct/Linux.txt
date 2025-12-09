@@ -1,0 +1,83 @@
+
+
+Date : 04-10-2023
+DevOps with AWS
+Mr. Raghu (AshokIT)
+-------------------------------------
+Website : Collection of WebPages(ex: LoginPage, RegisterPage, HomePage,
+  ProfilePage, Settings Page, ..etc)
+Ex: Facebook, Gmail, ..etc
+
+*) Webpages are created using HTML,CSS and JavaScript.
+ [Also some programming languages Java, .net, PHP ..etc]
+
+*) httpd is a webserver software.
+*) It is used to run Static Webpages (HTML,CSS,JS).
+*) httpd works on port number : 80
+*) We have to start (stop) server.
+*) Dynamic WebPage means : Content of Webpage is different based on
+		Users/locations/time.
+
+[ Windows: services.msc -> Right click on service -> Start ]
+
+----------------------------------------------------------------
+Step#1 Install httpd server
+sudo yum install httpd 
+
+Step#2 We need to start httpd service
+
+sudo systemctl start httpd
+sudo systemctl stop httpd
+
+sudo systemctl enable httpd [auto-start, when we restart/reboot linux server]
+sudo systemctl status httpd  [press q to exit]
+------------or--------------
+sudo service httpd start
+sudo service httpd status
+sudo service httpd stop
+
+Step#3 Test URL
+Copy PublicIP from AWS console and enter URL like
+  http://PublicIP:80  
+  ex: http://65.2.187.188:80
+
+Note: if it is not responding, open port 80(HTTP) in Security Group.
+
+Step#4 Goto Webserver location and create one HTML file
+> cd /var/www/html
+> sudo vi index.html
+ Press i to come into insert mode
+
+<h1>Welcome to all </h1>
+
+ESC :wq
+
+--------------------------------------
+---From Starting-----------------------
+sudo -i
+yum install wget unzip httpd -y
+wget https://www.tooplate.com/zip-templates/2132_clean_work.zip -O 2132_clean_work.zip
+unzip 2132_clean_work.zip
+cp -r 2132_clean_work/* /var/www/html/
+systemctl start httpd
+
+Try for more samples:
+https://www.tooplate.com/
+
+ec2-65-2-187-188.ap-south-1.compute.amazonaws.com
+
+------task-----------------------
+Try above setup using Ubuntu
+
+1. update os
+sudo apt update   [not yum, use apt]
+
+2. Install s/w
+sudo apt install wget unzip apache2
+
+*) For RedHat/CentOS/Amazon Linux --- Package name is httpd
+*) For Ubuntu/Debian --- Package name is apache2
+
+3. Download Template, Unzip and copy to apache2
+
+4. test URL

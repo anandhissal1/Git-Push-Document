@@ -1,0 +1,108 @@
+
+
+Date : 03-10-2023
+DevOps with AWS
+Mr. Raghu (AshokIT)
+----------------------------------
+User Operations
+useradd, usermod, userdel, passwd
+Group Operations
+groupadd, groupdel, gpasswd, lid -g
+
+File Operations
+chmod, chown
+
+--> output line for  cat /etc/passwd -----
+ec2-user:x:1000:1000:EC2 Default User:/home/ec2-user:/bin/bash
+
+Here:
+ec2-user = username
+x        = link to password (shadow file)
+1000     = userid
+1000     = primary group id
+EC2 Default user = comment section
+/home/ec2-user = User home directory
+/bin/bash      = login shell
+
+
+Note:
+-> /sbin/nologin: That user is not for login.
+   User is created for system operations (ex: tomcat users, sys-op)
+=====================================================================
+Q) How can we make normal user as Administrator(sudoer/sudo)?
+
+A)
+  root is a default admin. So, he can execute any command from any location.
+  ec2-user is a sudoer user. (ie this user added to sudoers files)
+  So, he is also having equal permissions like root, but every command
+  need to be prefixed by sudo word.
+
+  Message: ajay is not in the sudoers file
+
+  Step#1 become root user (sudo -i / sudo su )
+  Step#2 visudo
+  [search for line root ALL=(ALL) :ALL and add below line]
+  ajay   ALL=(ALL)   :ALL      --> This one asks passwd if we use sudo
+  ajay   ALL=(ALL)  :NOPASSWD  :ALL    
+
+  Step#3 Save and exit (ctrl+O, Enter, Ctrl+X)
+  Step#4 switch to ajay and try sudo commands
+  sudo su - ajay
+  sudo useradd sam
+
+  ------------(2nd way)-----------------------
+  Create a sudoer file under location /etc/sudoers.d/
+
+  commands :
+  > sudo -i
+  > cd /etc/sudoers.d/
+  > cat >> ajayd
+  ajay  ALL=(ALL)  :NOPASSWD :ALL
+  ctrl+C
+  > su - ajay
+
+*) Linux Admins, System Admins will do all these things.
+
+==================================================================
+		Software Management / Package Management
+==================================================================
+Linux : Install S/w(Packages)
+
+To install, un-install, upgrade any software package, we need to use
+package managers. like yum
+
+ex:
+sudo yum install tree -y
+sudo yum install git -y
+
+For Amazon Linx / RHEL / CentOS
+sudo yum install java-1.8.0-openjdk
+sudo yum install java-17-amazon-corretto
+
+For Ubuntu:
+sudo apt install openjdk-17-jre
+
+To search a package name:
+sudo yum list | grep -i 'java-'
+
+To install Maven:
+sudo yum install maven
+To un-install:
+sudo yum remove maven
+
+To see complete list:
+sudo yum list | less  (press down arrow to scroll, q to exit)
+
+============================================================
+Ubuntu Server:
+**username : ubuntu
+
+execut first command: sudo apt update
+
+sudo apt install maven -y
+sudo apt install git -y
+
+
+Q) How can we find current os details?
+A) cat /etc/os-release
+================================================================

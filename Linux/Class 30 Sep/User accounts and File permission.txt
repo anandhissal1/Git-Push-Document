@@ -1,0 +1,156 @@
+
+
+Date : 30-09-2023
+DevOps and AWS
+Mr. Raghu (AshokIT)
+--------------------
+Linux User Accounts & File Persmission
+
+File permissions: 3 types ->
+r = read  - view file content (only view/open)
+w = write - modify/append file content (open and add some data)
+x = execute - run/execute a file (scripts/library files)
+
+File - associated with owner/user(u), group(g), others(o)
+
+owner/user(u) - who created that file
+group(g)      - every file is attached/associated to a group
+		  [that group container some list of users]
+
+others(o)   - users who are not owner/exist(added) in group.
+
+> ls -l   ==> -l - long list will display data in this format
+
+[file permissions]  [links]  user  group   (size)   date    filename
+  -r-xrwx--x           1    ajay   devops    10  Nov 12 2022  abc.txt
+
+======================================================================
+chmod : to change file permissions of a given file
+
+*** lowercase letters only
+-------------------------------------------------------
+Symbols		Meaning
+--------------------------------------------------------
+u		user   / the one who created the file / owner
+
+g		group / file connected to a group 
+
+o		others / people who are not part of owner/group
+
+r		read permission
+
+w		write permission
+
+x		execute permission
+
++		add/append permission
+
+-		remove/delete  permission
+
+=               reset with new set of permissions
+
+
+------------------------------------------------------
+read = 4
+
+write = 2
+
+execute = 1
+------------------------------------------------------
+Q1) update file permission as given below for abc.txt file using 
+	numarical concept (use chmod)
+
+  rw-  r-x  r--  _________  abc.txt
+
+A)  chmod  654  abc.txt
+
+Q2) update file permission as given below for abc.txt file using 
+	numarical concept (use chmod)
+
+  rwx  r--  r--  _________  abc.txt
+
+A)  chmod 744  abc.txt
+
+Q3) update file permission as given below for linux.pem file using 
+	numarical concept (use chmod)
+
+  r--  ---  ---  _________  linux.pem
+
+A)  chmod 400 linux.pem
+
+---------------------------------------------------------
+
+chown : to update ownership/group attached to a file
+
+
+1. create user ajay,sam, vinay
+2. create group devops
+3. add sam to devops
+4. switch to ajay user / root user
+5. create a file abc.txt as ajay (owner)
+6. update file owner to vinay
+7. update file group to devops
+
+--------------history of commands--------------------------
+ 1  cat /etc/passwd
+    2  useradd ajay
+    3  useradd sam
+    4  useradd vinay
+    5  groupadd devops
+    6  usermod -aG devops sam
+    7  id sam
+    8  ls -l
+    9  touch abc.txt
+   10  ls -l
+   11  chown  :devops abc.txt
+   12  ls -l
+   13  chown vinay abc.txt
+   14  ls -l
+   15  chown vinay:devops abc.txt
+   16  chown root:root abc.txt
+   17  ls -l
+   18  chown vinay:devops abc.txt
+   19  ls -l
+
+
+================================
+    1  ls -l
+    2  ls -la
+    3  touch abc.txt
+    4  ls
+    5  ls -l
+    6  chmod u+x abc.txt
+    7  ls -l
+    8  chmod g+w abc.txt
+    9  ls -l
+   10  chmod o-r abc.txt
+   11  ls -l
+   12  chmod u-w,g+x,o+wx abc.txt
+   13  ls -l
+   14  chmod u=x,g=r,o=rwx abc.txt
+   15  ls -l
+   16  chmod 764 abc.txt
+   17  ls -l
+   18  chmod 400 abc.txt
+   19  ls -l
+   20  chmod 701 abc.txt
+   21  ls -l
+   22  chmod 765 abc.txt
+   23  ls -l
+================================================================
+
+Q) what is chown -R  user:group  directory ? 
+	   chmod -R  755  directory ?
+
+directory
+ file-1
+ file-2
+ file-3
+
+A) -R = recursive means update details(permissions/users) to given
+	directory and files present inside that directory
+====================================================================
+Q***) What is the difference between 'chmod' and 'chown' commands?
+
+chmod ---> it is used for managing file permissions
+chown ---> it is used for managing file ownership

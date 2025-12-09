@@ -1,0 +1,34 @@
+name: using a task tag handler
+hosts: all
+become: true
+vars:
+  server:
+    - git
+    - maven
+    - httpd
+    - start
+tasks:
+  - name: installation git
+    tags:
+      - git
+    package:
+      - name: "{{server}}"
+        state: present
+  - name: installation maven
+    tags:
+      - maven
+    yum:
+      - name: "{{server}}"
+        state: present
+  - name: installation httpd
+    tags:
+      - httpd
+    yum:
+      - name: httpd
+        state: present
+  - name: service start
+    tags:
+      - start
+    service:
+      - name: httpd
+        state: started

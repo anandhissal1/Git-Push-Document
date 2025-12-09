@@ -1,0 +1,41 @@
+- name: using a task tag handler
+  hosts: 
+  become: true
+  vars:
+     "packages_to_install":
+      - git
+      - maven
+      - httpd
+      - start
+  tasks:
+    - name: installation in server git 
+      tags:
+        - tag1 
+      package:
+        name: "{{server}}"
+        state: present 
+      loop: "{{ packages_to_install }}"  
+
+
+
+      -------------
+
+      - name: installation maven
+    - tags:
+        - maven
+    - yum:
+        - name: "{{server}}"
+        - state: present
+    - name: installation httpd
+    - tags:
+        - httpd
+    - yum:
+        - name: httpd
+        - state: present
+    - name: service start
+    - tags:
+        - start
+    - service:
+        - name: httpd
+        - state: started
+    

@@ -1,0 +1,15 @@
+- name: installation
+  hosts: all
+  become: true
+  vars:
+    install: httpd
+
+  tasks:
+    - name: installation in server
+      yum:
+        name: "{{install}}"
+        state: present
+    - name: service start
+      service: 
+       name: "{{install}}"
+       state: started  

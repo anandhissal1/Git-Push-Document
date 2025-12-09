@@ -1,0 +1,78 @@
+
+Date: 28-09-2023
+DevOps and AWS
+Mr. Raghu (AshokIT)
+----------------------
+Linux Commands
+ls, pwd, mkdir, rmdrim, rm, cat, 
+head, tail, man, grep, cd, cp, mv ...etc
+
+Text Editor in Linux:
+vi - Visula Editor -- create, modify  file content.
+command mode and insert mode.
+
+editor opens file in command mode.
+i -> from command mode to insert mode
+ESC -> from insert mode to command mode
+
+ESC :w => for save only
+ESC :q => for quit  
+ESC :wq => save and exit
+ESC :q! => Quite forcefully (without save/cancel changes)
+ESC :wq! => save and quite (forced)
+
+Command mode: (ESC) -> gg -> Cursor comes to starting of the file
+		        G -> Cursor comes to ending of the file
+
+Command Mode(ESC) -> /WORDTOSEARCH  (press enter key)
+	Next Matching N , Previous Matching Shift+N
+
+Command Mode (ESC) -> :se nu  (to show line numbers)
+		      :se nonu (to hide line numbers)
+
+Command Mode(ESC) -> :<lineNumber> (goto line number)
+===============================================================
+nano :  Text Editor
+Command to install nano editor if it is not present.
+$ sudo yum install nano -y
+
+$ nano filename
+Open in edit mode only
+ctrl+x for exit, ctrl+O for save/write
+==============================================================
+History:
+1  ls
+    2  ls -la
+    3  cat > mydata
+    4  vi mydata
+    5  cat mydata
+    6  ls
+    7  vi details
+    8  cat d
+    9  ls
+   10  vi details
+   11  cat details
+   12  vi details
+   13  ls
+   14  cat details
+   15  vi details
+   16  vi names
+   17  nano names
+   18  sudo yum install nano
+   19  nano names
+   20  history
+============================================================
+User commands:
+who , whoami, who am i.
+id
+pwd
+
+Q) how to view users in current linux machine?
+A) cat /etc/passwd
+
+
+
+
+
+
+

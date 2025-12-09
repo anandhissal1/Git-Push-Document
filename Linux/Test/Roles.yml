@@ -1,0 +1,27 @@
+- name: New installation in server 
+  hosts: all
+  gather_facts: no
+  become: true 
+  vars:
+     packages_to_install:
+      - git
+      - maven
+      - httpd
+      - start
+
+  tasks:
+   - name: Install in server 
+     yum: 
+        name: "{{iteam}}" 
+        state: present 
+     tags:
+        dev 
+     loop: "{{parameter value}}" 
+
+   - name: Install in server 
+     yum: 
+        name: "{{iteam}}" 
+        state: present 
+     tags:
+        prod
+     loop: "{{parameter value}}"        

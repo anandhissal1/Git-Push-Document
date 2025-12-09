@@ -1,0 +1,222 @@
+
+
+Date : 26-09-2023
+DevOps and AWS
+Mr. Raghu (AshokIT)
+--------------------
+Amazon Linux 2023 / RedHat / Fedora / CentOS / Ubuntu
+
+ls, cat, pwd, touch
+
+1. Directory (also called as Folder) is used to hold set of files
+   or/and sub-directories.
+
+2. Linux contains multiple directories. 
+   ex: bin, home, usr, dev, etc, opt, boot ..etc
+
+3.*** For every user one home directory is exist.
+  ex: username is : ec2-user , home directory: /home/ec2-user
+      username is : ajay     , home directory: /home/ajay
+
+4. To indicate current user home directory (symbol is) : ~
+
+5.** Every Linux machine containd admin user or root user.
+     For root user home directory is /root.
+
+
+
+mkdir		: it is used to create/make directory
+rmdir		: it is used to remove only empty directory
+rm -r <dirname> : It is used to delete non-empty directories
+cd <dirname>	: Change directory/goto directory
+cd ..		: Come out from the directory (one step back)
+
+ex: mkdir details
+    cd details
+    pwd
+    cd ..
+    rmdir details
+    rm -r details
+    rm -r -f details  / rm -rf details / rm -fr details
+    ls / ls -l / ls -la
+
+=============history============
+    1  exit / R
+    2  pwd
+    3  ls
+    4  ls -la
+    5  ll
+    6  ls -l
+    7  pwd
+    8  mkdir mydetails
+    9  ls
+   10  ls -l
+   11  touch test
+   12  ls -l
+   13  rm test
+   14  ls
+   15  ls -l
+   16  pwd
+   17  cd mydetails/
+   18  pwd
+   19  cd ..
+   20  cd mydetails
+   21  cd ~
+   22  cd mydetails/
+   23  pwd
+   24  touch test
+   25  touch sample
+   26  ls
+   27  cd ..
+   28  ls
+   29  rmdir mydetails/
+   30  cd mydetails/
+   31  ls
+   32  rm sample test
+   33  cd ..
+   34  rmdir mydetails/
+   35  ls
+   36  mkdir mydetails
+   37  cd mydetails/
+   38  touch sample text
+   39  cd ..
+   40  rmdir mydetails/
+   41  rm -r mydetails
+   42  ls
+
+----------------------------------------------------------------
+history -c : Clear/delete all commands registered in history
+
+cat -n one : print file content with line numbers
+
+head -n 15 : gives top 15 lines of a file
+
+tail -n 12 : give me last 12 lines from file
+tail -n +12 : give me 12th line onwards to last line from file
+
+--------------------------------------------------------
+Q) How to read log files data using tail command?
+A) tail -f filename.log
+   -f : display flow of new lines into log file
+   (ctrl+C to come out of the file)
+
+
+Q) how to know more about a command? Or open command manual?
+A) use man command / press 'q' to come out of the manual
+
+ex: man wc   (use arrows) , press q to exit
+
+
+Q) how to print number of lines only / words only / characters only in a file?
+A)
+	wc -l filename  //lines count
+	wc -w filename  // words count
+	wc -c filename  // chars count
+
+*) cp is used to create a copy of given file
+Syntax: cp <source>  <destination>
+ex:   cp  hello   mydetails/new_hello
+      cat hello > mydetails/new_hello
+
+
+Q) What is the command to rename or move a file?
+A) mv
+
+Syntax:  mv <source>  <destination>
+ex:      mv  hello      hi   //rename file
+         mv  one two three  mydetails/    //move all 3 files into mydetails
+
+
+Q) How to install tree s/w in Linux ?
+A) sudo yum install tree -y
+
+tree <directory-name>
+tree .
+-------------------------------------------------
+grep : used to search given word in given files
+
+-i : ignore case
+-n : print matching line numbers
+*  : all files
+
+examples:
+grep 'data' welcome.txt : search word data in welcome.txt file
+grep -i 'data' welcome.txt : search word data, DATA, Data, DatA ..all combinations
+				in welcome.txt file
+grep -n 'data' welcome.txt : search word data in welcome.txt file, display line numbers also
+------------------------------------------------------------------
+
+History
+
+ 1  history
+    2  ls
+    3  mkdir mydetails
+    4  cat > one
+    5  cat one
+    6  cat -n one
+    7  head one
+    8  head -n one
+    9  tail one
+   10  cat one
+   11  head one
+   12  head -n 4 one
+   13  head -n 12 one
+   14  tail one
+   15  tail -n 3 one
+   16  tail -f one
+   17  tail -f one
+   18  cat > hello
+   19  wc hello
+   20  man wc
+   21  man ls
+   22  man man
+   23  wc hello
+   24  we -l hello
+   25  wc -l hello
+   26  wc -c hello
+   27  wc -w hello
+   28  man wc
+   29  wc hello
+   30  hello
+   31  cat hello
+   32  ls
+   33  cp hello mydetails/new_hello
+   34  ls
+   35  cd mydetails/
+   36  ls
+   37  cat new_hello
+   38  cd ..
+   39  cat mydetails/new_hello
+   40  cat hello > welcome
+   41  cat welcome
+   42  cat hello
+   43  ls
+   44  mv hello hi
+   45  ls
+   46  mv hi mydetails/
+   47  ls
+   48  cd mydetails/
+   49  ls
+   50  cd ~
+   51  sudo yum install tree -y
+   52  tree .
+   53  cd mydetails/
+   54  tree .
+   55  cd ..
+   56  tree .
+   57  mkdir test
+   58  cd test/
+   59  touch models
+   60  touch files
+   61  cd ~
+   62  tree .
+   63  ls
+   64  cat welcome
+   65  cat >> welcome
+   66  cat welcome
+   67  grep 'data' welcome
+   68  grep -i 'data' welcome
+   69  grep -i -n 'data' welcome
+   70  grep -in  'data' welcome
+   71  grep -ni  'data' welcome
+   72  man grep

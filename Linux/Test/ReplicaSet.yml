@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Repicaset
+metadata:
+  name: my-rs
+  labels:
+    apitype: key
+
+Spec:
+  replicas: 3
+  selector:
+    matchLabel:
+      key: apps
+      value: generate
+  template:
+    Spec:
+      metadata:
+        labels:
+          key: apps
+          value: generate
+      containers:
+        name: my-app
+        image: nginx
+        ports:
+          containersPort: 8080

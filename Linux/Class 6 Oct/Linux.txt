@@ -1,0 +1,111 @@
+
+
+Date : 06-10-2023
+DevOps and AWS
+Mr. Raghu (AshokIT)
+----------------------------
+*) find command :- To search files/directories in Linux File System.
+
+Syntax:
+find  [whereToSearch]  [Options]
+
+whereToSearch = Location/Path to search.
+ex: /home/ajay , ~ , / (every where), . (current directory)
+
+Options = name (file name), type [f/d], user, group, size, mtime, chmod ..etc
+
+1) Search a file with name 'ab' in current directory(pwd)
+>  find .  -name 'ab' -type f
+2) Search all empty files in user home directory
+> find ~  -type f -empty
+> find ~  -type f -size 0K
+
+3) search a file whose size is less than 20MB
+> find ~  -type f -size -20M
+
+> find ~  -type f -size 20M (exact 20M size)
+> find ~  -type f -size +20M (more than 20M size)
+
+4) search files created by user 'sam'
+> find /  -user 'sam'
+
+ex#2 Search a file/directory created by ec2-user that starts with 'w'
+> find ~ -user ec2-user -name 'w*'  [* means any characters]
+
+5) search files which are having permission '644'
+> find /home/ec2-user  -perm 644
+
+6) Search a file created by user 'sam' having group 'devops'
+A) find / -user 'sam' -group 'devops' -type f
+
+Ex#2 
+find . -user 'ec2-user' -group 'ec2-user' -type f
+
+EX#3
+> find /home -mtime 7
+> find /home -atime +7
+===============================================================
+***Q) Find files which are ending with log and delete them 
+        from location /tmp.
+
+> find /tmp -name '*.log' -type f
+
+> find /tmp -name '*.log' -type f -exec rm {} +
+
+> find /tmp -name '*.log' -type f -exec rm {} \;
+
+Here {} means result of find command (all files found)
+
+Ex#2
+find . -name '*.txt' -type f -exec rm {} \;
+
+=====================================================
+locate : similer to find command
+
+> sudo yum install locate -y
+> sudo updatedb
+> locate ab | grep 'ec2-user'
+
+Note: Symbol Pipe (|) is used to pass one command result to next command.
+Ex:
+ sort -r details | uniq
+ ls -l | grep 'drwx'
+ ls -l | grep -v 'drwx'
+ find . -type f | grep -i '/*'
+
+=====================================================
+sed : to search, find and replace words, delete or insert
+[no need to open file]
+
+> sed 'pattern' filename
+
+# Replace 1st occurance of welcome with bye in each line
+> sed 's/welcome/bye/' message.txt
+
+# Replace 2nd occurance of welcome with bye in each line
+> sed 's/welcome/bye/2' message.txt
+
+# Replace All occurances of welcome with bye in each line
+> sed 's/welcome/bye/g' message.txt
+
+# From 3rd to 5th line
+> sed '3,5 s/welcome/bye/' message.txt
+
+# Only at 3rd line
+> sed '3 s/welcome/bye/' message.txt
+
+# From 3rd to last line
+> sed '3,$ s/welcome/bye/' message.txt
+
+***Q) How can we update result of actual file using sed command?
+A) use -i flag
+Ex:
+> sed -i 's/welcome/test/g' message.txt
+
+Q) Number of files in a given directory including sub-directories.
+> find . -type f | wc -l
+
+**Q) Write “Hello World” line 10 times into a file.
+for i in {1..10};
+do echo 'hello world' ;
+done;

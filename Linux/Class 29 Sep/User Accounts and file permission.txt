@@ -1,0 +1,118 @@
+
+Date : 29-09-2023
+DevOps and AWS
+Mr. Raghu (AshokIT)
+-----------------------------------
+Linux - User Accounts & File Permissions
+
+1. Every Linux Server conatins 2 users by default.
+  1 is root user (Administrator/super user/sudo), 1 is general user(Regular Users)
+
+-- sudo : super user do
+
+2. We can even create groups in Linux Server, to specify/restrict permissions
+   (Who can access what)
+
+*) vm  : Virtual Machine (AWS EC2)
+   
+Q) How to become root user in Linux?
+A) sudo su - (or) sudo su (or)  sudo -i
+ --> super user do  switch user 
+
+to back to previus user login --> exit.
+
+
+Mac Users:
+> cd Downloads/
+> chmod 400 linux.pem
+> ssh -i "linux.pem" ec2-user@ec2-15-206-27-6.ap-south-1.compute.amazonaws.com
+> ssh -i "linux.pem" ec2-user@15.206.27.6
+(yes)
+[ec2-user@172.168.10.12 ~ $] exit
+
+For root user prompt symbol -- #
+For other users prompt symbol -- $
+
+
+*) Lab Task:-
+1. become root user
+> sudo su -
+
+2. create 2 users ajay, sam
+> useradd ajay
+> useradd sam
+
+(for ubuntu: even support command adduser, deluser)
+
+3. View all users in Linux
+> cat /etc/passwd   (or) tail /etc/passwd
+
+4. use sudo to execute commands without switching to root 
+[ but in realtime/ s/w orgs , machines will ask password ]
+
+> sudo useradd vinay
+
+-------------------------------------------------------------
+5. To remove user
+> userdel vinay
+	(or)
+> sudo userdel vinay
+
+*) Note: Linux is case-sensitive (uppercase and lowercase words are different)
+ie SAM, Sam, sam are different.
+
+6. To set password to user
+> passwd raghu
+New Password:
+Confirm Password:
+
+7. id -- to know given user exist or not, if exist -- get userid, groupid
+
+8. switch between users - (su - ajay  / exit)
+
+9. if we use command useradd --> it create new user and also creates one 
+	directory for user as HOME directory
+
+ex: useradd ashok
+    id ashok
+    ls /home/
+
+10. to create a new group :
+> groupadd devops
+
+11. List all groups existed
+> cat /etc/group
+
+*)Note: id groupname (is invalid command)
+
+12. Remove one existed group
+> groupdel devops
+
+Q*****) How to add user to one group? 
+usermod -aG <group-name> <user-name>
+
+-a -G => valid (a = append , G = Group)
+
+ex: add sam to devops group
+> usermod -aG devops sam
+
+ex: add rajesh to ithd group
+> usermod -aG ithd rajesh
+
+Q*****) How to remove user from one group? 
+gpasswd -d <user-name> <group-name>
+
+ex: Remove sam from devops group
+> gpasswd -d sam devops
+
+ex: Remove rajesh from ithd group
+> gpasswd -d rajesh ithd
+
+13. List all users present in given group name
+> lid -g <group-name>
+ex: lid -g ithd
+
+---------------------------------------------------------
+*) Note: grep is used to search given word in a given file
+grep -i 'ithd' /etc/group
+(-i : ignore case)

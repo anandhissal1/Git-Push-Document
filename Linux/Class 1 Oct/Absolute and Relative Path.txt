@@ -1,0 +1,82 @@
+
+Date : 01-10-2023
+DevOps with AWS
+Mr. Raghu (AshokIT)
+---------------------
+pwd :- print working directory
+       present working directory
+
+Ex:
+whoami --> current user : ajay
+pwd    --> /home/ajay
+touch abc.txt --> created in what location
+
+file location: /home/ajay/abc.txt
+
+sudo -i / sudo su -  (Switched to root user)
+pwd  => /root
+chmod 750 abc.txt --?? {file not exist}
+
+chmod 750 /home/ajay/abc.txt --?? {file not exist}
+
+---------------------------------------------------
+Path in Linux (File Paths)
+1. Absolute Path (Start from / location )
+If we want access a file from different location (not under pwd/or even any)
+then provide IT'S FULL PATH includes / symbol.
+
+ex: /etc/passwd
+ex: /home/ajay/details/abc.txt
+ex: /home/ec2-user/mydata/info/test.txt
+
+2. Relative Path (starts from pwd location)
+To access a file that exist under pwd or any sub directory, then provide
+remaining location.
+
+pwd: /home/ajay/
+file: /home/ajay/details/abc.txt
+
+[ec2-user @ IP  ~ ] pwd
+/home/ec2-user/
+
+Q) What is the difference b/w using / or ./ or ../ with cd,ls,cat commands?
+A)  Here / means starts from root directory
+         ./ means use pwd location and continue
+	 ../ means go one step back (or go one folder/directory back)
+
+=========================================================
+List out all process details:
+$ ps -aux  (press q to exit)
+$ top 
+$ htop  (sudo yum install htop -y)
+$ ping <website-domain-name> or PublicIP
+$ ping google.com  (or) ping 12.16.18.32
+$ wget (to download s/w into our machine)
+ex:
+$ wget https://dlcdn.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.zip
+
+$ wget URL  -o  /location/fileName
+$ wget wget https://dlcdn.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.zip -o /tmp/apache-maven-3.9.4-bin.zip
+
+$ wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.80/bin/apache-tomcat-9.0.80.zip   -o /tmp/apache-tomcat-9.0.80.zip
+
+## Downloads to PWD
+$ wget https://services.gradle.org/distributions/gradle-8.3-bin.zip 
+
+## Downloads to /tmp folder
+$ wget https://services.gradle.org/distributions/gradle-8.3-bin.zip -o /tmp/gradle-8.3-bin.zip
+
+=====================================================================
+## unzip
+$ unzip gradle-8.3-bin.zip 
+$ unzip gradle-8.3-bin.zip -d /tmp (extract here)
+
+## curl (used to make HTTP Request/ like POSTMAN tool)
+
+curl --location 'http://localhost:8080/order/create' \
+--header 'Content-Type: application/json' \
+--data '{
+    "productId" : 3,
+    "userId" : 1
+}'
+====================================================================
